@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Archlinuxcn Packages</title>
+    <title>bioarchlinux Packages</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"
         integrity="sha256-YY1izqyhIj4W3iyJOaGWOpXDSwrHWFL4Nfk+W0LyCHE=" crossorigin="anonymous">
     <style>
@@ -110,7 +110,7 @@
                         title: "GitHub",
                         data: "pkgbase",
                         render: function (data, type, row, meta) {
-                            return `<a href=https://github.com/archlinuxcn/repo/blob/master/archlinuxcn/${data}/ target=_blank rel=noopener>GitHub</a>`
+                            return `<a href=https://github.com/BioArchLinux/Packages/blob/master/BioArchLinux/${data}/ target=_blank rel=noopener>GitHub</a>`
                         }
                     },
                     {
@@ -118,7 +118,7 @@
                         title: "日志",
                         data: "ts",
                         render: function (data, type, row, meta) {
-                            return `<a href=https://build.archlinuxcn.org/imlonghao-api/pkg/${row.pkgbase}/log/${Math.floor(data / 1000)} target=_blank rel=noopener>日志</a>`
+                            return `<a href=https://build.bioarchlinux.org/imlonghao-api/pkg/${row.pkgbase}/log/${Math.floor(data / 1000)} target=_blank rel=noopener>日志</a>`
                         }
                     },
                     {
