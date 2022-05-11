@@ -97,7 +97,7 @@ fn get_maintainer(pkg: String) -> Result<String> {
     Ok(maintainers.join(", "))
 }
 
-#[get("/imlonghao-api/status")]
+#[get("/api/status")]
 async fn status(db: web::Data<deadpool_postgres::Pool>) -> impl Responder {
     let conn = db.get().await.unwrap();
     let rows = conn
@@ -113,7 +113,7 @@ async fn status(db: web::Data<deadpool_postgres::Pool>) -> impl Responder {
     HttpResponse::Ok().json(result)
 }
 
-#[get("/imlonghao-api/current")]
+#[get("/api/current")]
 async fn current(db: web::Data<deadpool_postgres::Pool>) -> impl Responder {
     let conn = db.get().await.unwrap();
     let rows = conn

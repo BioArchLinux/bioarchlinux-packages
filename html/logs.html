@@ -27,7 +27,7 @@
             hour12: false,
         });
         $(window).on('hashchange', function () {
-            url = window.location.hash.includes("#") ? "/imlonghao-api/pkg/" + window.location.hash.slice(1) : "/imlonghao-api/logs"
+            url = window.location.hash.includes("#") ? "/api/pkg/" + window.location.hash.slice(1) : "/api/logs"
             $.get(url, function (newDataArray) {
                 let datatable = $('#l').DataTable()
                 datatable.clear()
@@ -36,7 +36,7 @@
             });
         });
         $(document).ready(function () {
-            url = window.location.hash.includes("#") ? "/imlonghao-api/pkg/" + window.location.hash.slice(1) : "/imlonghao-api/logs"
+            url = window.location.hash.includes("#") ? "/api/pkg/" + window.location.hash.slice(1) : "/api/logs"
             $('#l').DataTable({
                 "searchDelay": 100,
                 "iDisplayLength": 100,
@@ -118,7 +118,7 @@
                         title: "Log",
                         data: "ts",
                         render: function (data, type, row, meta) {
-                            return `<a href=https://build.bioarchlinux.org/imlonghao-api/pkg/${row.pkgbase}/log/${Math.floor(data / 1000)} target=_blank rel=noopener>Log</a>`
+                            return `<a href=https://build.bioarchlinux.org/api/pkg/${row.pkgbase}/log/${Math.floor(data / 1000)} target=_blank rel=noopener>Log</a>`
                         }
                     },
                     {
