@@ -82,7 +82,7 @@ struct LogsResponse {
 #[cached(time = 86400, result = true)]
 fn get_maintainer(pkg: String) -> Result<String> {
     let contents = std::fs::read_to_string(format!(
-        "/data/archgitrepo-webhook/archlinuxcn/{}/lilac.yaml",
+        "/home/bio/Packages/BioArchLinux/{}/lilac.yaml",
         pkg
     ))?;
     let docs = YamlLoader::load_from_str(&contents)?;
@@ -242,7 +242,7 @@ async fn get_pkg_log(
         return HttpResponse::BadRequest().body("ts is too old");
     }
     let logdir: String = rows[0].get("logdir");
-    let filename = format!("/home/lilydjwg/.lilac/log/{}/{}.log", logdir, name);
+    let filename = format!("/home/bio/.lilac/log/{}/{}.log", logdir, name);
     let contents = match std::fs::read_to_string(&filename) {
         Ok(x) => x,
         Err(_) => return HttpResponse::NotFound().body(format!("Log {} not exist", &filename)),
@@ -256,18 +256,18 @@ async fn get_pkg_log(
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let _guard = sentry::init((
-        std::env::var("SENTRY").unwrap(),
-        sentry::ClientOptions {
-            release: sentry::release_name!(),
-            ..Default::default()
-        },
-    ));
+    //let _guard = sentry::init((
+    //    std::env::var("SENTRY").unwrap(),
+    //    sentry::ClientOptions {
+    //        release: sentry::release_name!(),
+    //        ..Default::default()
+    //    },
+    //));
     std::env::set_var("RUST_BACKTRACE", "1");
 
     let mut cfg = deadpool_postgres::Config::new();
-    cfg.user = Some("imlonghao".to_string());
-    cfg.dbname = Some("lilydjwg".to_string());
+    cfg.user = Some("bio".to_string());
+    cfg.dbname = Some("build".to_string());
     cfg.host = Some("/run/postgresql".to_string());
     cfg.manager = Some(deadpool_postgres::ManagerConfig {
         recycling_method: deadpool_postgres::RecyclingMethod::Fast,
