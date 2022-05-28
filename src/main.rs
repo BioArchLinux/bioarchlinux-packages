@@ -82,7 +82,7 @@ struct LogsResponse {
 #[cached(time = 86400, result = true)]
 fn get_maintainer(pkg: String) -> Result<String> {
     let contents = std::fs::read_to_string(format!(
-        "/home/bio/Packages/BioArchLinux/{}/lilac.yaml",
+        "/usr/share/lilac/Packages/BioArchLinux/{}/lilac.yaml",
         pkg
     ))?;
     let docs = YamlLoader::load_from_str(&contents)?;
