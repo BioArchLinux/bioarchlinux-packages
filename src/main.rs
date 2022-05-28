@@ -144,7 +144,7 @@ async fn current(db: web::Data<deadpool_postgres::Pool>) -> impl Responder {
     HttpResponse::Ok().json(result)
 }
 
-#[get("/imlonghao-api/logs")]
+#[get("/api/logs")]
 async fn logs(db: web::Data<deadpool_postgres::Pool>) -> impl Responder {
     let conn = db.get().await.unwrap();
     let rows = conn
@@ -182,7 +182,7 @@ async fn logs(db: web::Data<deadpool_postgres::Pool>) -> impl Responder {
     HttpResponse::Ok().json(results)
 }
 
-#[get("/imlonghao-api/pkg/{name}")]
+#[get("/api/pkg/{name}")]
 async fn get_pkg(
     name: web::Path<String>,
     db: web::Data<deadpool_postgres::Pool>,
@@ -220,7 +220,7 @@ async fn get_pkg(
     HttpResponse::Ok().json(results)
 }
 
-#[get("/imlonghao-api/pkg/{name}/log/{ts}")]
+#[get("/api/pkg/{name}/log/{ts}")]
 async fn get_pkg_log(
     path: web::Path<(String, i64)>,
     db: web::Data<deadpool_postgres::Pool>,
