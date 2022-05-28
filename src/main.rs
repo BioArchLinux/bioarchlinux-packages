@@ -267,7 +267,7 @@ async fn main() -> std::io::Result<()> {
 
     let mut cfg = deadpool_postgres::Config::new();
     cfg.user = Some("bio".to_string());
-    cfg.dbname = Some("build".to_string());
+    cfg.dbname = Some("lilac".to_string());
     cfg.host = Some("/run/postgresql".to_string());
     cfg.manager = Some(deadpool_postgres::ManagerConfig {
         recycling_method: deadpool_postgres::RecyclingMethod::Fast,
