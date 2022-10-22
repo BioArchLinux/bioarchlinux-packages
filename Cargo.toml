@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 actix-web = "4.2.1"
 ansi-to-html = "0.1.2"
-anyhow = "1.0.65"
+anyhow = "1.0.66"
 bigdecimal = "0.3.0"
 cached = "0.39.0"
 chrono = "0.4.22"
@@ -19,6 +19,6 @@ pg_bigdecimal = "0.1.5"
 postgres-types = { version = "0.2.4", features = ["derive"]}
 sentry = "0.27.0"
 sentry-actix = "0.27.0"
-serde = { version = "1.0.145", features = ["derive"] }
+serde = { version = "1.0.147", features = ["derive"] }
 tokio-postgres = { version = "0.7.7", features = ["with-chrono-0_4"]}
 yaml-rust = "0.4.5"
