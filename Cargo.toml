@@ -6,19 +6,19 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "4.2.1"
+actix-web = "4.3.0"
 ansi-to-html = "0.1.2"
 anyhow = "1.0.68"
 bigdecimal = "0.3.0"
 cached = "0.42.0"
 chrono = "0.4.23"
-deadpool-postgres = "0.10.3"
+deadpool-postgres = "0.10.5"
 enum-display-derive = "0.1.1"
 openssl = { version = "0.10.45", features = ["vendored"] }
 pg_bigdecimal = "0.1.5"
 postgres-types = { version = "0.2.4", features = ["derive"]}
-sentry = "0.29.1"
-sentry-actix = "0.29.1"
+sentry = "0.29.2"
+sentry-actix = "0.29.2"
 serde = { version = "1.0.152", features = ["derive"] }
 tokio-postgres = { version = "0.7.7", features = ["with-chrono-0_4"]}
 yaml-rust = "0.4.5"
