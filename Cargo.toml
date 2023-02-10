@@ -1,5 +1,5 @@
 [package]
-name = "archlinuxcn-packages"
+name = "bioarchlinux-packages"
 version = "0.2.6"
 edition = "2021"
 
